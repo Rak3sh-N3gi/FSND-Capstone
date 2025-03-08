@@ -21,6 +21,38 @@ def create_app(test_config=None):
     @app.route('/coolkids')
     def be_cool():
         return "Be cool, man, be coooool! You're almost a FSND grad!"
+    
+    @app.route('/actors')
+    def get_actors():
+        return "Get actors"
+    
+    @app.route('/movies')
+    def get_movies():
+        return "Get movies"
+    
+    @app.route('/actors', methood=['DELETE'])
+    def delete_actor():
+        return "Delete actor"
+    
+    @app.route('/movies', methood=['DELETE'])
+    def delete_movie():
+        return "Delete movie"
+    
+    @app.route('/actors', methood=['POST'])
+    def create_actor():
+        return "Create actor"
+    
+    @app.route('/movies', methood=['POST'])
+    def create_movie():
+        return "Create movie"
+    
+    @app.route('/actors', methood=['PATCH'])
+    def update_actor():
+        return "Update actor"
+    
+    @app.route('/movies', methood=['PATCH'])
+    def update_movie():
+        return "Update movie"
 
     return app
 

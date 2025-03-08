@@ -41,3 +41,36 @@ class Person(db.Model):
       'id': self.id,
       'name': self.name,
       'catchphrase': self.catchphrase}
+  
+class Movies(db.Model):
+  __tablename__ = 'Movies'
+  title = Column(String, primary_key=True)
+  release_date = Column(String)
+
+  def __init__(self, title, release_date):
+    self.title = title
+    self.release_date = release_date
+
+  def format(self):
+    return {
+      'title': self.title,
+      'release_date': self.release_date}
+  
+class Actors(db.Model):
+  __tablename__ = 'Actors'
+  id = Column(db.Integer, primary_key=True)
+  name = Column(String)
+  age = Column(db.Integer)
+  gender = Column(String)
+
+  def __init__(self, name, age, gender):
+    self.name = name
+    self.age = age
+    self.gender = gender
+
+  def format(self):
+    return {
+      'id': self.id,
+      'name': self.name,
+      'age': self.age,
+      'gender': self.gender}
