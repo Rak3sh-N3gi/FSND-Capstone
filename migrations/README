@@ -1,1 +1,183 @@
-Single-database configuration for Flask.
+# Casting Agency
+
+## API Documention
+
+This section provide detailed documentation of the API endpoints including the URL, request parameters, and the response body.
+
+### Actors endpoints
+
+`GET '/actors/<int:id>'`
+- Fetches Actor details in JSON format based on the ID provided in URL.
+- Request Arguments: Actor_id
+- Returns: An object `Actor`, that contains `id: Actor_id` of type Integer, 'name: Actor_name' of type String, 'age: Actor_age' of type Integer, 'gender: Actor_gender' of type String, in key: value pairs.
+- Return object example :
+```json
+{
+    "id": 1,
+    "name": "name",
+    "age": 123,
+    "gender": "M"
+}
+```
+- Failures: 400 if Actor details with actor_id is not present.
+
+`GET '/actors'`
+- Fetches all available Actors details in JSON format.
+- Request Arguments: non
+- Returns: List of object `Actor`, that contains `id: Actor_id` of type Integer, 'name: Actor_name' of type String, 'age: Actor_age' of type Integer, 'gender: Actor_gender' of type String, in key: value pairs.
+- Return object example :
+```json
+{[
+    {
+    "id": 1,
+    "name": "name",
+    "age": 12,
+    "gender": "M"
+    },
+    {
+    "id": 2,
+    "name": "name2",
+    "age": 42,
+    "gender": "F"    
+    }
+]}
+```
+
+`DELETE '/actors/<int:id>'`
+- Deletes an Actor based on actor id.
+- Request Arguments: actor_id in URL
+- Returns: An object with , `success` : state of rquest
+    ```json
+    {
+      "success": "True"
+    }
+    ```
+- Failures: 400 if Actor_id argument is not present or is 0 or actor details for the id is not present
+
+`POST '/actors'`
+- Add a new actor..
+- Request Arguments: An object `Actor`, that contains 'name: Actor_name' of type String, 'age: Actor_age' of type Integer, 'gender: Actor_gender' of type String, in key: value pairs.
+- Request body: 
+    ```json
+    {
+    "name": "name2",
+    "age": 42,
+    "gender": "F"    
+    }
+    ```
+- Returns: An object with , `success` : state of rquest, 'created' : id of Actor added.
+    ```json
+    {
+      "success": "True",
+      "created": 1
+    }
+    ```
+- Failure: 422 if any of the request argument is not present, 500 if Actor could not be created.
+
+`PATCH '/actors/<int:id>'`
+- Update actor details.
+- Request Arguments: An object `Actor`, that contains 'name: Actor_name' of type String or 'age: Actor_age' of type Integer or 'gender: Actor_gender' of type String, in key: value pairs to update Actor with id as Actor_Id.
+- Request body: 
+    ```json
+    {
+    "name": "name2",
+    "age": 42,
+    "gender": "F"    
+    }
+    ```
+- Returns: An object with , `success` : state of rquest, 'created' : id of Actor updated.
+    ```json
+    {
+      "success": "True",
+      "created": 1
+    }
+    ```
+- Failure: 400 if Actor with Actor_id is not present to update, 422 if none of the request argument is present, 500 if update could not be done
+
+### Movies Endpoints
+
+`GET '/movies/<int:id>'`
+- Fetches Movie details in JSON format based on the ID provided in URL.
+- Request Arguments: Movie_id
+- Returns: An object `Movie`, that contains `id: Movie_id` of type Integer, 'title: Movie_title' of type String, 'release_date: Movie_release_date' of type String, in key: value pairs.
+- Return object example :
+```json
+{
+    "id": 1,
+    "title": "movie_title",
+    "release_date": "movie_release_date"
+}
+```
+- Failures: 400 if movie details with movie_id is not present.
+
+`GET '/movies'`
+- Fetches all available Movies details in JSON format.
+- Request Arguments: non
+- Returns: List of object `Movie`, that contains `id: Movie_id` of type Integer, 'title: Movie_title' of type String, 'release_date: Movie_release_date' of type String, in key: value pairs.
+- Return object example :
+```json
+{[
+    {
+    "id": 1,
+    "title": "movie_title",
+    "release_date": "movie_release_date"
+    },
+    {
+    "id": 2,
+    "title": "movie_title2",
+    "release_date": "movie_release_date"
+    }
+]}
+```
+
+`DELETE '/movies/<int:id>'`
+- Deletes a Movie based on movie_id.
+- Request Arguments: movie_id in URL
+- Returns: An object with , `success` : state of rquest
+    ```json
+    {
+      "success": "True"
+    }
+- Failure: 400 if movie_id argument is not present or is 0 or movie details for the id is not present
+
+`POST '/movies'`
+- Add a new movie.
+- Request Arguments: An object `Movie`, that contains 'title: Movie_title' of type String, 'release_date: Movie_release_date' of type String, in key: value pairs.
+- Request body: 
+    ```json
+    {
+    "title": "movie_title2",
+    "release_date": "movie_release_date"
+    }
+    ```
+- Returns: An object with , `success` : state of rquest, 'created' : id of Actor added.
+    ```json
+    {
+      "success": "True",
+      "created": 1
+    }
+    ```
+- Failure: 422 if any of the request argument is not present,500 if update could not be done
+
+`PATCH '/movies/<int:id>'`
+- Update actor details.
+- Request Arguments: An object `Movie`, that contains 'title: Movie_title' of type String or 'release_date: Movie_release_date' of type String, in key: value pairs to update Movie with id as Movie_id in URL.
+- Request body: 
+    ```json
+    {
+    "title": "Movie_title",
+    "release_date": "Movie_release_date"
+    }
+    ```
+- Returns: An object with , `success` : state of rquest, 'created' : id of Movie updated.
+    ```json
+    {
+      "success": "True",
+      "created": 1
+    }
+    ```
+- Failure: 400 if Movie with movie_id is not present to update, 422 if none of the request argument is present, 500 if update could not be done
+
+## Testing
+
+To deploy the tests, run

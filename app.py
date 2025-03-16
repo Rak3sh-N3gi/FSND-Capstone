@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, jsonify
+from flask import Flask, abort, request, jsonify
 from sqlalchemy import null
 from models import *
 from flask_cors import CORS
@@ -22,21 +22,21 @@ def create_app(test_config=None):
         if excited == 'true': 
             greeting = greeting + "!!!!! You are doing great in this Udacity project."
         return greeting
-
-    @app.route('/coolkids')
-    def be_cool():
-        return "Be cool, man, be coooool! You're almost a FSND grad!"
     
     # Get actors by actor ID
     @app.route('/actors/<int:id>')
     def get_actor(id):
         actors = Actors.display(id)
+        if actors is None or null:
+            abort(400)
         return json.loads(actors)
     
     # Get movies by movie ID
     @app.route('/movies/<int:id>')
     def get_movie(id):
         movies = Movies.display(id)
+        if movies is None or null:
+            abort(400)
         return json.loads(movies)
 
     # Get all actors
@@ -54,50 +54,76 @@ def create_app(test_config=None):
     # Delete actor by actor ID
     @app.route('/actors/<int:id>', methods=['DELETE'])
     def delete_actor(id):
+        if id is None or id == 0:
+            abort(400)
+
         rc = Actors.delete(id)
         if rc == 0:
-            return "Actor deletion failed."
+            abort(400)
         else:
-            return ("Actor with id=%d deleted successfully" % id)
+            return jsonify ({
+                "success": True
+            })
     
     #delete movie by movie ID
     @app.route('/movies/<int:id>', methods=['DELETE'])
     def delete_movie(id):
+        if id is None or id == 0:
+            abort(400)
+
         rc = Movies.delete(id)
         if rc == 0:
-            return "Movie deletion failed."
+            abort(400)
         else:
-            return ("Movie with id=%d deleted successfully" % id)
+            return jsonify ({
+                "success": True
+            })
     
     # Create actor
     @app.route('/actors', methods=['POST'])
     def create_actor():
+        if request.get_json().get("name") is None or request.get_json().get("age") is None or request.get_json().get("gender") is None:
+            abort(422)
+            
         actor = Actors(request.get_json().get("name"),request.get_json().get("age"),request.get_json().get("gender"))
         rc = Actors.insert(actor)
         if rc == 0:
-            return "Actor creation failed."
+            abort(500)
         else:
-            return ("Actor created with id=%d" % rc)
+            return jsonify ({
+                "success": True,
+                "created": rc
+            })
     
     # Create movie
     @app.route('/movies', methods=['POST'])
     def create_movie():
+        if request.get_json().get("title") is None or request.get_json().get("release_date") is None:
+            abort(422)
+
         movie = Movies(request.get_json().get("title"),request.get_json().get("release_date"))
         rc = Movies.insert(movie)
         if rc == 0:
-            return "Movie creation failed."
+            abort(500)
         else:
-            return ("Movie created with id=%d" % rc )
+            return jsonify ({
+                "success": True,
+                "created": rc
+            })
     
     # Update actor
     @app.route('/actors/<int:id>', methods=['PATCH'])
     def update_actor(id):
-        actor = Actors.display(id)
-        actor = json.loads(actor)
-        
         if id is None or id == 0:
-            return "Actor not found."
+            abort(400)
+
+        if request.get_json().get("name") is None and request.get_json().get("age") is None and request.get_json().get("gender") is None:
+            abort(422)
         else:
+            actor = Actors.display(id)
+            if actor is None or null:
+                abort(400)
+            actor = json.loads(actor)
             if request.get_json().get("name") is not None:
                 name = request.get_json().get("name")
             else:
@@ -114,18 +140,28 @@ def create_app(test_config=None):
             rc = Actors.update(id,name,age,gender)
 
         if rc == 0:
-                return "Actor update failed."
+            return jsonify ({
+                "success": False,
+                "created": rc
+            })
         else:
-                return ("Actor details with id=%d updated successfully" % id)        
+            return jsonify ({
+                "success": True,
+                "created": rc
+            })
     
     @app.route('/movies/<int:id>', methods=['PATCH'])
     def update_movie(id):
-        movie = Movies.display(id)
-        movie = json.loads(movie)
-        
         if id is None or id == 0:
-            return "Movie not found."
+            abort(400)
+
+        if request.get_json().get("title") is None and request.get_json().get("release_date") is None:
+            abort(422)
         else:
+            movie = Movies.display(id)
+            if movie is None or null:
+                abort(400)
+            movie = json.loads(movie)
             if request.get_json().get("title") is not None:
                 title = request.get_json().get("title")
             else:
@@ -138,10 +174,40 @@ def create_app(test_config=None):
             rc = Movies.update(id,title,releaseDate)
 
         if rc == 0:
-                return "Movie update failed."
+            abort(500)
         else:
-                return ("Movie details with id=%d updated successfully" % id)
-
+            return jsonify ({
+                "success": True,
+                "created": rc
+            })
+  
+    # Error handling
+    @app.errorhandler(400)
+    def bad_request(error):
+        return (jsonify({"success": False, "error": 400, "message": "bad request"}),
+                400,
+                )
+    
+    @app.errorhandler(404)
+    def not_found(error):
+        return (
+            jsonify({"success": False, "error": 404,
+                    "message": "Resource not found"}),
+            404,
+        )
+    @app.errorhandler(422)
+    def unprocessable(error):
+        return (
+            jsonify({"success": False, "error": 422,
+                    "message": "Unprocessable entity"}),
+            422,
+        )
+    @app.errorhandler(500)
+    def server_error(error):
+        return (jsonify({"success": False, "error": 500, "message": "Server error"}),
+                400,
+                )
+    
     return app
 
 app = create_app()
