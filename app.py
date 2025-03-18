@@ -9,33 +9,42 @@ from flask_migrate import Migrate
 def create_app(test_config=None):
 
     app = Flask(__name__)
-    # db.init_app(app)
+    
     migrate = Migrate(app, db)
+    
     with app.app_context():
-        setup_db(app)
-        CORS(app)
+        if test_config is None:
+            setup_db(app)
+        else:
+            database_path = test_config.get('SQLALCHEMY_DATABASE_URI')
+            setup_db(app, database_path=database_path)
+    
+        # db.create_all()
 
     @app.route('/')
     def get_greeting():
         excited = os.environ['EXCITED']
         greeting = "Hello" 
         if excited == 'true': 
-            greeting = greeting + "!!!!! You are doing great in this Udacity project."
-        return greeting
+            greeting = greeting + " welcome to Casting Agency application home."
+        return jsonify({
+            'message': greeting
+        })
     
     # Get actors by actor ID
     @app.route('/actors/<int:id>')
     def get_actor(id):
         actors = Actors.display(id)
-        if actors is None or null:
+        if actors is None or len(actors) == 0:
             abort(400)
         return json.loads(actors)
+        # return actors
     
     # Get movies by movie ID
     @app.route('/movies/<int:id>')
     def get_movie(id):
         movies = Movies.display(id)
-        if movies is None or null:
+        if movies is None or len(movies) == 0:
             abort(400)
         return json.loads(movies)
 
