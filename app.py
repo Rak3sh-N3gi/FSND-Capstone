@@ -5,6 +5,7 @@ from models import *
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from auth.auth import AuthError, requires_auth
 
 def create_app(test_config=None):
 
@@ -33,6 +34,7 @@ def create_app(test_config=None):
     
     # Get actors by actor ID
     @app.route('/actors/<int:id>')
+    @requires_auth('read:actors')
     def get_actor(id):
         actors = Actors.display(id)
         if actors is None or len(actors) == 0:
@@ -42,6 +44,7 @@ def create_app(test_config=None):
     
     # Get movies by movie ID
     @app.route('/movies/<int:id>')
+    @requires_auth('read:movies')
     def get_movie(id):
         movies = Movies.display(id)
         if movies is None or len(movies) == 0:
@@ -50,18 +53,21 @@ def create_app(test_config=None):
 
     # Get all actors
     @app.route('/actors')
+    @requires_auth('read:actors')
     def get_actors():
         actors = Actors.display_all()
         return json.loads(actors)
 
     # Get all movies
     @app.route('/movies')
+    @requires_auth('read:movies')
     def get_movies():
         movies = Movies.display_all()
         return json.loads(movies)
     
     # Delete actor by actor ID
     @app.route('/actors/<int:id>', methods=['DELETE'])
+    @requires_auth('delete:actors')
     def delete_actor(id):
         if id is None or id == 0:
             abort(400)
@@ -76,6 +82,7 @@ def create_app(test_config=None):
     
     #delete movie by movie ID
     @app.route('/movies/<int:id>', methods=['DELETE'])
+    @requires_auth('delete:movies')
     def delete_movie(id):
         if id is None or id == 0:
             abort(400)
@@ -90,6 +97,7 @@ def create_app(test_config=None):
     
     # Create actor
     @app.route('/actors', methods=['POST'])
+    @requires_auth('create:actors')
     def create_actor():
         if request.get_json().get("name") is None or request.get_json().get("age") is None or request.get_json().get("gender") is None:
             abort(422)
@@ -106,6 +114,7 @@ def create_app(test_config=None):
     
     # Create movie
     @app.route('/movies', methods=['POST'])
+    @requires_auth('create:movies')
     def create_movie():
         if request.get_json().get("title") is None or request.get_json().get("release_date") is None:
             abort(422)
@@ -122,6 +131,7 @@ def create_app(test_config=None):
     
     # Update actor
     @app.route('/actors/<int:id>', methods=['PATCH'])
+    @requires_auth('update:actors')
     def update_actor(id):
         if id is None or id == 0:
             abort(400)
@@ -160,6 +170,7 @@ def create_app(test_config=None):
             })
     
     @app.route('/movies/<int:id>', methods=['PATCH'])
+    @requires_auth('update:movies')
     def update_movie(id):
         if id is None or id == 0:
             abort(400)
@@ -216,6 +227,14 @@ def create_app(test_config=None):
         return (jsonify({"success": False, "error": 500, "message": "Server error"}),
                 400,
                 )
+    
+    @app.errorhandler(AuthError)
+    def auth_error(error):
+        return jsonify({
+            "success": False,
+            "error": error.status_code,
+            "message": error.error
+        }), error.status_code
     
     return app
 
