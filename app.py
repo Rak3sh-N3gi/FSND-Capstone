@@ -140,7 +140,7 @@ def create_app(test_config=None):
             abort(422)
         else:
             actor = Actors.display(id)
-            if actor is None or null:
+            if actor is None or len(actor) == 0:
                 abort(400)
             actor = json.loads(actor)
             if request.get_json().get("name") is not None:
@@ -159,10 +159,7 @@ def create_app(test_config=None):
             rc = Actors.update(id,name,age,gender)
 
         if rc == 0:
-            return jsonify ({
-                "success": False,
-                "created": rc
-            })
+            abort(500)
         else:
             return jsonify ({
                 "success": True,
@@ -179,17 +176,17 @@ def create_app(test_config=None):
             abort(422)
         else:
             movie = Movies.display(id)
-            if movie is None or null:
+            if movie is None or len(movie) == 0:
                 abort(400)
             movie = json.loads(movie)
             if request.get_json().get("title") is not None:
                 title = request.get_json().get("title")
             else:
-                title = movie["name"]
+                title = movie["title"]
             if request.get_json().get("release_date") is not None:
                 releaseDate = request.get_json().get("release_date")
             else:
-                releaseDate = movie["releaseDate"]
+                releaseDate = movie["release_date"]
 
             rc = Movies.update(id,title,releaseDate)
 
