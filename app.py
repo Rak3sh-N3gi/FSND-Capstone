@@ -35,7 +35,7 @@ def create_app(test_config=None):
     # Get actors by actor ID
     @app.route('/actors/<int:id>')
     @requires_auth('read:actors')
-    def get_actor(id):
+    def get_actor(payload,id):
         actors = Actors.display(id)
         if actors is None or len(actors) == 0:
             abort(400)
@@ -45,7 +45,7 @@ def create_app(test_config=None):
     # Get movies by movie ID
     @app.route('/movies/<int:id>')
     @requires_auth('read:movies')
-    def get_movie(id):
+    def get_movie(payload,id):
         movies = Movies.display(id)
         if movies is None or len(movies) == 0:
             abort(400)
@@ -54,21 +54,21 @@ def create_app(test_config=None):
     # Get all actors
     @app.route('/actors')
     @requires_auth('read:actors')
-    def get_actors():
+    def get_actors(payload):
         actors = Actors.display_all()
         return json.loads(actors)
 
     # Get all movies
     @app.route('/movies')
     @requires_auth('read:movies')
-    def get_movies():
+    def get_movies(payload):
         movies = Movies.display_all()
         return json.loads(movies)
     
     # Delete actor by actor ID
     @app.route('/actors/<int:id>', methods=['DELETE'])
     @requires_auth('delete:actors')
-    def delete_actor(id):
+    def delete_actor(payload,id):
         if id is None or id == 0:
             abort(400)
 
@@ -83,7 +83,7 @@ def create_app(test_config=None):
     #delete movie by movie ID
     @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
-    def delete_movie(id):
+    def delete_movie(payload,id):
         if id is None or id == 0:
             abort(400)
 
@@ -98,7 +98,7 @@ def create_app(test_config=None):
     # Create actor
     @app.route('/actors', methods=['POST'])
     @requires_auth('create:actors')
-    def create_actor():
+    def create_actor(payload):
         if request.get_json().get("name") is None or request.get_json().get("age") is None or request.get_json().get("gender") is None:
             abort(422)
             
@@ -115,7 +115,7 @@ def create_app(test_config=None):
     # Create movie
     @app.route('/movies', methods=['POST'])
     @requires_auth('create:movies')
-    def create_movie():
+    def create_movie(payload):
         if request.get_json().get("title") is None or request.get_json().get("release_date") is None:
             abort(422)
 
@@ -132,7 +132,7 @@ def create_app(test_config=None):
     # Update actor
     @app.route('/actors/<int:id>', methods=['PATCH'])
     @requires_auth('update:actors')
-    def update_actor(id):
+    def update_actor(payload,id):
         if id is None or id == 0:
             abort(400)
 
@@ -171,7 +171,7 @@ def create_app(test_config=None):
     
     @app.route('/movies/<int:id>', methods=['PATCH'])
     @requires_auth('update:movies')
-    def update_movie(id):
+    def update_movie(payload,id):
         if id is None or id == 0:
             abort(400)
 
