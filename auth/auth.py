@@ -9,7 +9,7 @@ from urllib.request import urlopen
 # Auth0 configuration
 AUTH0_DOMAIN = 'dev-7pu1qwqr0730cbbq.us.auth0.com'
 ALGORITHMS = ['RS256']
-API_AUDIENCE = 'https://render-cloud-example-ipd7.onrender.com'
+API_AUDIENCE = 'https://render-cloud-example-ipd7.onrender.com/'
 
 # AuthError Exception
 class AuthError(Exception):
