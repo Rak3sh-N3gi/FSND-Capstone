@@ -1,0 +1,1144 @@
+{
+	"info": {
+		"_postman_id": "60fdd6ea-7edb-4af3-a80b-bdd0b6a276f6",
+		"name": "Capstone",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40627477"
+	},
+	"item": [
+		{
+			"name": "Casting Assistant",
+			"item": [
+				{
+					"name": "Insert Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 50,\r\n        \"gender\": \"Male\",\r\n        \"name\": \"Tom Hanks\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Makdi\",\r\n    \"release_date\": \"08-03-2025\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 32,\r\n        \"name\": \"Rakesh Negi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Movie by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"release_date\": \"08-03-2025\",\r\n    \"title\": \"Dil hai deewana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actors by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/2",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRiOGY4YmQ0NTA2YmNkNzc1ZDUiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MDg0NCwiZXhwIjoxNzQyNDk4MDQ0LCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsicmVhZDphY3RvcnMiLCJyZWFkOm1vdmllcyJdfQ.N08nzFyo4rNV4GDLkkZUSPSSwNAyvKUMnOjXsZTisANGGuE0re7xIv7XwW4tdSCI8EAKC5Q59q1z0i95CvF38cYtH0tVpjPtCDxwB74WPnBSW0kfaA39T1KN7Nj-8woetfjmAmXdGxxfagU0F8P9PEar31ahT3Sj9sShHx1MgmuGzZpgdwAs8iQIp2TOYlM3HiUsC0ZMdOJApzqF6TyGWnhHLRhlJGMw8AqpOBGXxUC5OVdwXybMPlSwpMokQiwkAfr8STVAC2dqOZ_fMxIJh-qqsE5MWMdMPHl_fqb7mYyf3_aPkD2XoxtQjQ85JD7aAQBmuV6Cq59MZC-Y99nNRw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Can view actors and movies"
+		},
+		{
+			"name": "Casting Director",
+			"item": [
+				{
+					"name": "Insert Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 50,\r\n        \"gender\": \"Male\",\r\n        \"name\": \"Tom Hanks\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Makdi\",\r\n    \"release_date\": \"08-03-2025\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 32,\r\n        \"name\": \"Rakesh Negi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Movie by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"release_date\": \"08-03-2025\",\r\n    \"title\": \"Dil nahi hai deewana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actors by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/4",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDRlYjYzOGE3YWJlOTQxNzJhYjQiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ4ODk2MywiZXhwIjoxNzQyNDk2MTYzLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImRlbGV0ZTphY3RvcnMiLCJyZWFkOmFjdG9ycyIsInJlYWQ6bW92aWVzIiwidXBkYXRlOmFjdG9ycyIsInVwZGF0ZTptb3ZpZXMiXX0.epTXCORkC0RVzUMD2JHMfFcDBrf6zG6VsXfV2KKZUqUZZuIUl4_McaEu6oWKwSeS1JY5IaT6GDZNl4WM_R3aRBVVK3620pwX5xkled6EojLzLqcCfjTRrcYjNE3Y2886VojxspRIon_PaI5LeO3QAwW5D95V6raX7YuLkCOcmf2_jIqYh-4HXyi_6XpLc556Dp6lcQC3Lkp_LmElrbnijVB0GXpkZxelIqXdvrye8o8MY4o1Dhag9zG05fNpPHug1ycmA-8bdFz6Mnv1xrhlA-RBuH9i7ihIe_6ZF5Zkma2OgZ032Pri05iZoNbw-04xo3JeEbokTZqWuo6FHtTlvg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Can view actors and movies"
+		},
+		{
+			"name": "Executive producer",
+			"item": [
+				{
+					"name": "Insert Actor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 50,\r\n        \"gender\": \"Male\",\r\n        \"name\": \"Tom Hanks\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Insert Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Makdi\",\r\n    \"release_date\": \"08-03-2025\"\r\n}\r\n    ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Actors",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"age\": 32,\r\n        \"name\": \"Rakesh Negi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch Movie by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"release_date\": \"08-03-2025\",\r\n    \"title\": \"Dil hai deewana\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Actors by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/1",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"1"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Actors by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/actors/5",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"actors",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Movies by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InA2TzNPbUI4OHJodl9GQ2I1ZEtRbCJ9.eyJpc3MiOiJodHRwczovL2Rldi03cHUxcXdxcjA3MzBjYmJxLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2N2RjNDUxYmU0OGRmYTdhMTg2YWUyN2IiLCJhdWQiOiJodHRwczovL3JlbmRlci1jbG91ZC1leGFtcGxlLWlwZDcub25yZW5kZXIuY29tLyIsImlhdCI6MTc0MjQ5MTA3MSwiZXhwIjoxNzQyNDk4MjcxLCJzY29wZSI6IiIsImF6cCI6IjRLVjJBTXcyOUoxZWJlcFhURkRscmlLTnBwelp5dUkyIiwicGVybWlzc2lvbnMiOlsiY3JlYXRlOmFjdG9ycyIsImNyZWF0ZTptb3ZpZXMiLCJkZWxldGU6YWN0b3JzIiwiZGVsZXRlOm1vdmllcyIsInJlYWQ6YWN0b3JzIiwicmVhZDptb3ZpZXMiLCJ1cGRhdGU6YWN0b3JzIiwidXBkYXRlOm1vdmllcyJdfQ.euvqHJs-jOWxfdelFcNas22wY1mJrWApVmFu01YAZeGrHr2Mpurle-kw6YMfykGCqb-h5d0nu_wP61uiliNxNida1QgO9K1Sj1shnrpp8v1SbGtvgTgbk9dZZAqMcDcYaWMh_Q7taRY8aOpWz_tj1q6F2MpHB4v-EN8xp1B726BbZKo85ATliy-r0Zx8uTjDqMw3b56BkwOVtPY87RFuYm8tc3DITtkgx_2zfPru6rgHUbRzYa7XQmNNBntPqprkednhkOPoIYOZ5URUeGLtNw5owzgrWjIXXMdJRLFvTSlzrL3L665vnFy2r-_mSPHupqXF1zcA8_Wkq0n5cP5IZg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://render-cloud-example-ipd7.onrender.com/movies/2",
+							"protocol": "https",
+							"host": [
+								"render-cloud-example-ipd7",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"movies",
+								"2"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Can view actors and movies"
+		}
+	]
+}

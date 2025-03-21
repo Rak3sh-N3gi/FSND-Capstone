@@ -12,13 +12,15 @@ ALGORITHMS = ['RS256']
 API_AUDIENCE = 'https://render-cloud-example-ipd7.onrender.com/'
 
 # AuthError Exception
+
+
 class AuthError(Exception):
     def __init__(self, error, status_code):
         self.error = error
         self.status_code = status_code
 
 
-## Auth Header
+# Auth Header
 def get_token_auth_header():
     authHeader = request.headers.get('Authorization', None)
     if not authHeader:

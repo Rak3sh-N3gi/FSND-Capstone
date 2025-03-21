@@ -7,45 +7,46 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from auth.auth import AuthError, requires_auth
 
+
 def create_app(test_config=None):
 
     app = Flask(__name__)
-    
+
     migrate = Migrate(app, db)
-    
+
     with app.app_context():
         if test_config is None:
             setup_db(app)
         else:
             database_path = test_config.get('SQLALCHEMY_DATABASE_URI')
             setup_db(app, database_path=database_path)
-    
+
         # db.create_all()
 
     @app.route('/')
     def get_greeting():
         excited = os.environ['EXCITED']
-        greeting = "Hello" 
-        if excited == 'true': 
+        greeting = "Hello"
+        if excited == 'true':
             greeting = greeting + " welcome to Casting Agency application home."
         return jsonify({
             'message': greeting
         })
-    
+
     # Get actors by actor ID
     @app.route('/actors/<int:id>')
     @requires_auth('read:actors')
-    def get_actor(payload,id):
+    def get_actor(payload, id):
         actors = Actors.display(id)
         if actors is None or len(actors) == 0:
             abort(400)
         return json.loads(actors)
         # return actors
-    
+
     # Get movies by movie ID
     @app.route('/movies/<int:id>')
     @requires_auth('read:movies')
-    def get_movie(payload,id):
+    def get_movie(payload, id):
         movies = Movies.display(id)
         if movies is None or len(movies) == 0:
             abort(400)
@@ -64,11 +65,11 @@ def create_app(test_config=None):
     def get_movies(payload):
         movies = Movies.display_all()
         return json.loads(movies)
-    
+
     # Delete actor by actor ID
     @app.route('/actors/<int:id>', methods=['DELETE'])
     @requires_auth('delete:actors')
-    def delete_actor(payload,id):
+    def delete_actor(payload, id):
         if id is None or id == 0:
             abort(400)
 
@@ -76,14 +77,14 @@ def create_app(test_config=None):
         if rc == 0:
             abort(400)
         else:
-            return jsonify ({
+            return jsonify({
                 "success": True
             })
-    
-    #delete movie by movie ID
+
+    # delete movie by movie ID
     @app.route('/movies/<int:id>', methods=['DELETE'])
     @requires_auth('delete:movies')
-    def delete_movie(payload,id):
+    def delete_movie(payload, id):
         if id is None or id == 0:
             abort(400)
 
@@ -91,27 +92,28 @@ def create_app(test_config=None):
         if rc == 0:
             abort(400)
         else:
-            return jsonify ({
+            return jsonify({
                 "success": True
             })
-    
+
     # Create actor
     @app.route('/actors', methods=['POST'])
     @requires_auth('create:actors')
     def create_actor(payload):
         if request.get_json().get("name") is None or request.get_json().get("age") is None or request.get_json().get("gender") is None:
             abort(422)
-            
-        actor = Actors(request.get_json().get("name"),request.get_json().get("age"),request.get_json().get("gender"))
+
+        actor = Actors(request.get_json().get("name"), request.get_json().get(
+            "age"), request.get_json().get("gender"))
         rc = Actors.insert(actor)
         if rc == 0:
             abort(500)
         else:
-            return jsonify ({
+            return jsonify({
                 "success": True,
                 "created": rc
             })
-    
+
     # Create movie
     @app.route('/movies', methods=['POST'])
     @requires_auth('create:movies')
@@ -119,20 +121,21 @@ def create_app(test_config=None):
         if request.get_json().get("title") is None or request.get_json().get("release_date") is None:
             abort(422)
 
-        movie = Movies(request.get_json().get("title"),request.get_json().get("release_date"))
+        movie = Movies(request.get_json().get("title"),
+                       request.get_json().get("release_date"))
         rc = Movies.insert(movie)
         if rc == 0:
             abort(500)
         else:
-            return jsonify ({
+            return jsonify({
                 "success": True,
                 "created": rc
             })
-    
+
     # Update actor
     @app.route('/actors/<int:id>', methods=['PATCH'])
     @requires_auth('update:actors')
-    def update_actor(payload,id):
+    def update_actor(payload, id):
         if id is None or id == 0:
             abort(400)
 
@@ -156,19 +159,18 @@ def create_app(test_config=None):
             else:
                 gender = actor["gender"]
 
-            rc = Actors.update(id,name,age,gender)
+            rc = Actors.update(id, name, age, gender)
 
         if rc == 0:
             abort(500)
         else:
-            return jsonify ({
-                "success": True,
-                "created": rc
+            return jsonify({
+                "success": True
             })
-    
+
     @app.route('/movies/<int:id>', methods=['PATCH'])
     @requires_auth('update:movies')
-    def update_movie(payload,id):
+    def update_movie(payload, id):
         if id is None or id == 0:
             abort(400)
 
@@ -188,23 +190,22 @@ def create_app(test_config=None):
             else:
                 releaseDate = movie["release_date"]
 
-            rc = Movies.update(id,title,releaseDate)
+            rc = Movies.update(id, title, releaseDate)
 
         if rc == 0:
             abort(500)
         else:
-            return jsonify ({
-                "success": True,
-                "created": rc
+            return jsonify({
+                "success": True
             })
-  
+
     # Error handling
     @app.errorhandler(400)
     def bad_request(error):
         return (jsonify({"success": False, "error": 400, "message": "bad request"}),
                 400,
                 )
-    
+
     @app.errorhandler(404)
     def not_found(error):
         return (
@@ -212,6 +213,7 @@ def create_app(test_config=None):
                     "message": "Resource not found"}),
             404,
         )
+
     @app.errorhandler(422)
     def unprocessable(error):
         return (
@@ -219,12 +221,13 @@ def create_app(test_config=None):
                     "message": "Unprocessable entity"}),
             422,
         )
+
     @app.errorhandler(500)
     def server_error(error):
         return (jsonify({"success": False, "error": 500, "message": "Server error"}),
                 400,
                 )
-    
+
     @app.errorhandler(AuthError)
     def auth_error(error):
         return jsonify({
@@ -232,8 +235,9 @@ def create_app(test_config=None):
             "error": error.status_code,
             "message": error.error
         }), error.status_code
-    
+
     return app
+
 
 app = create_app()
 
