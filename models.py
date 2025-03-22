@@ -147,7 +147,7 @@ class Actors(db.Model):
       db.session.close()
     return rc
 
-  # update Actor details, All the details are mandatory
+  # update Actor details, All the details are not mandatory
   def update(id,name,age,gender):
     rc = 0
     try:
