@@ -55,6 +55,8 @@ class Movies(db.Model):
   # display all movies
   def display_all():
     movies = Movies.query.all()
+    if movies is None or len(movies) == 0:
+      return None
     return format(movies)
     
   #insert movie details
@@ -125,11 +127,15 @@ class Actors(db.Model):
   # display actor details by id
   def display(id):
     actors = Actors.query.filter(Actors.id==id).one_or_none()
+    if actors is None:
+      return None
     return format(actors)
   
   # display all actors
   def display_all():
     actors = Actors.query.all()
+    if actors is None or len(actors) == 0:
+      return None
     return format(actors)
 
   # insert Actor details

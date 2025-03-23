@@ -1,9 +1,59 @@
 # Casting Agency
 - URL - https://render-cloud-example-ipd7.onrender.com/
 
+## Casting Agency Specifications
+
+The Casting Agency models a company that is responsible for creating movies and managing and assigning actors to those movies. You are an Executive Producer within the company and are creating a system to simplify and streamline your process.
+
+
+## Motivation for project
+
+This is the capstone project of Udacity fullstack nanodegree program, which demonstrate the skillset of using Flask, SQLAlchemy, Auth0, gunicorn and render to develop and deploy an application with REST endpoints.. 
+
+## Getting Started
+Create a virtual environment, in Windows using GIT bash :
+```bash
+python -m venv myvenv
+source myvenv/Scripts/activate
+```
+
+Install all the required dependencies as mentioned in requirements.txt :
+```bash
+pip install -r requirements.txt
+```
+
+Set the environment variables required to run and test the application. (It includes the role based tokens, if the tokens are expired get the tokens by logging into the applicaiton. See login steps at the end.):
+```bash
+source setup.sh
+```
+
+Run the application in local:
+```bash
+flask run
+```
+
+Test the application in local:
+```bash
+dropdb casting_agency_test
+createdb casting_agency_test
+python test_app.py
+```
+
+
 ## API Documention
 
 This section provide detailed documentation of the API endpoints including the URL, request parameters, and the response body.
+
+### Endpoints
+GET '/actors'
+POST '/actors'
+PATCH '/actors/<actor_id>'
+DELETE '/actors/<actor_id>'
+GET '/movies'
+GET '/movies'
+POST '/movies'
+PATCH '/movies/<movie_id>'
+DELETE '/actors/<movie_id>'
 
 ### Actors endpoints
 
@@ -188,7 +238,7 @@ This section provide detailed documentation of the API endpoints including the U
 
 ### Casting Assistant
 - email : assistant@casting.com
-- pwd : qwQW12!
+- pwd : qwQW12!@
 #### Role Description 
 - Can view actors and movies
 
@@ -206,3 +256,6 @@ This section provide detailed documentation of the API endpoints including the U
 #### Role Description
 - All permissions a Casting Director has
 - Add or delete a movie from the database
+
+## Authors
+Rakesh Negi as part of Udacity FSND program.

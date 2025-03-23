@@ -39,7 +39,7 @@ def create_app(test_config=None):
     def get_actor(payload, id):
         actors = Actors.display(id)
         if actors is None or len(actors) == 0:
-            abort(400)
+            abort(404)
         return json.loads(actors)
         # return actors
 
@@ -49,7 +49,7 @@ def create_app(test_config=None):
     def get_movie(payload, id):
         movies = Movies.display(id)
         if movies is None or len(movies) == 0:
-            abort(400)
+            abort(404)
         return json.loads(movies)
 
     # Get all actors
@@ -57,6 +57,8 @@ def create_app(test_config=None):
     @requires_auth('read:actors')
     def get_actors(payload):
         actors = Actors.display_all()
+        if actors is None or len(actors) == 0:
+            abort(404)
         return json.loads(actors)
 
     # Get all movies
@@ -64,6 +66,8 @@ def create_app(test_config=None):
     @requires_auth('read:movies')
     def get_movies(payload):
         movies = Movies.display_all()
+        if movies is None or len(movies) == 0:
+            abort(404)
         return json.loads(movies)
 
     # Delete actor by actor ID
@@ -72,7 +76,9 @@ def create_app(test_config=None):
     def delete_actor(payload, id):
         if id is None or id == 0:
             abort(400)
-
+        rc = Actors.display(id)
+        if rc is None or len(rc) == 0:
+            abort(404)
         rc = Actors.delete(id)
         if rc == 0:
             abort(400)
@@ -87,7 +93,9 @@ def create_app(test_config=None):
     def delete_movie(payload, id):
         if id is None or id == 0:
             abort(400)
-
+        rc = Movies.display(id)
+        if rc is None or len(rc) == 0:
+            abort(404)
         rc = Movies.delete(id)
         if rc == 0:
             abort(400)
@@ -144,7 +152,7 @@ def create_app(test_config=None):
         else:
             actor = Actors.display(id)
             if actor is None or len(actor) == 0:
-                abort(400)
+                abort(404)
             actor = json.loads(actor)
             if request.get_json().get("name") is not None:
                 name = request.get_json().get("name")
@@ -179,7 +187,7 @@ def create_app(test_config=None):
         else:
             movie = Movies.display(id)
             if movie is None or len(movie) == 0:
-                abort(400)
+                abort(404)
             movie = json.loads(movie)
             if request.get_json().get("title") is not None:
                 title = request.get_json().get("title")
@@ -204,6 +212,12 @@ def create_app(test_config=None):
     def bad_request(error):
         return (jsonify({"success": False, "error": 400, "message": "bad request"}),
                 400,
+                )
+    
+    @app.errorhandler(401)
+    def unauthorized(error):
+        return (jsonify({"success": False, "error": 401, "message": "unauthorized"}),
+                401,
                 )
 
     @app.errorhandler(404)
